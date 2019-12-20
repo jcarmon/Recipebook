@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>First name:</strong>
+  <%= @author.first_name %>
+</p>
+
+<p>
+  <strong>Last name:</strong>
+  <%= @author.last_name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @author.email %>
+</p>
+
+<h2>recipes </h2>
+<% for recipes in @author.recipes %>
+    <ul>
+      <li><%= recipes.title %></li>
+      <%= link_to 'see recipe', author_recipes_path(@author) %> |
+  </ul>
+<% end %>
+
+
+<%= link_to 'Edit', edit_author_path(@author) %> |
+<%= link_to 'Add recipe', new_author_recipe_path(@author) %>
+<%= link_to 'Back', authors_path %>
