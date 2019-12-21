@@ -1,0 +1,46 @@
+Thank you for the meeting! Here are the details for you first Rails
+project. The deadline is January 6th.
+
+You can read about Rails from the book attached and also please take a
+look at the online materials:
+
+https://guides.rubyonrails.org/getting_started.html
+
+The task is as follows (a lot of things are unclear for now but they
+should be OK after you start with the book):
+
+--write a CRUD (create, read, update, delete) application which will
+work as "Recipe Book" kind of app, storing & reading the data from a
+PostgreSQL database.
+--models: Recipe, Author, Ingredient
+--Recipe attributes: Recipe Name (String), Difficulty (a list of Easy,
+Intermediate, Pro, Chef - constants, required), Author (class,
+optional), Comment (String, text area-optional)
+--Author attributes: First Name, Last Name, Email Address (write a
+validation for the email format) - all strings, only First name is
+required
+--1:N relation between Author and Recipe (one author can have multiple
+recipes), one Recipe can have only one author
+--Ingredient attributes: Name (string), Amount (decimal), Unit (a list
+of Gram, Milliliters, and Piece - all constants)
+--1:N relation between Recipe and Ingredient (one recipe can have
+multiple ingredients). Even if it would be better to have M:N here, we
+will do it simple now and implement this with 1:N.
+--Recipe and Authors could be Created, Read, Updated and Deleted. If
+you delete an Author, his Recipes are nullified (not deleted). If you
+delete a Recipe, the Author will be kept. If you delete Recipe,
+Ingredients associated will be deleted.
+--try to implement AJAX for these CRUD operations (at least, for
+Create and Update).
+--you can use jQuery with Rails
+--use Bootstrap (Google it) for CSS to make it nice
+--the app should be responsive in browsers and on cell phones
+--IMPORTANT: write tests for the app!
+--the code should be put to a GIT repository (github.com), read more
+about git at https://git-scm.com/
+--push your code & results on a daily basis to the git repo you
+created at github.com
+--add me as a contributor in your new repo. My GitHub account is
+jirihradil. This way, I can track your progress and give you comments
+if necessary.
+--versions: use the latest stable Rails & PostgreSQL database.

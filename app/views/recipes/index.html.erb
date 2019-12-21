@@ -2,41 +2,38 @@
 
 <h1>Recipes</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Author</th>
-      <th>Difficulty</th>
-      <th>Ingredients</th>
-      <th>Comment</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
+ <div>
     <% @recipes.each do |recipe| %> 
-      <tr>
-        <td><%= recipe.title %></td>
-        <td><%= recipe.author.first_name%></td>
-        <td><%= recipe.difficulty %></td>
-        <td> 
+      <div class= "recipe">
+        <h2><%= recipe.title %></h2>
+        <br>
+        <p><%= recipe.author.first_name + '' + recipe.author.last_name%></p>
+        <br>
+        <p><%= recipe.difficulty %></td>
+        <br>
+        <table>
+        <tr> 
           <% recipe.ingredients.each do |ingredient| %>
-          <%= ingredient.name %>  
+          <td><%= ingredient.name %></td>
+          <td><%= ingredient.amount %></td> 
+          <td><%= ingredient.units %></td>   
           <% end %>
-        </td>
-        <td><%= recipe.comment %></td>
-        <td><%= link_to 'Show Author', [@author] %></td>
-        <td><%= link_to 'show ingredients', recipe_ingredients_path(recipe) %></td>
-        <td><%= link_to 'add ingredients', new_recipe_ingredient_path(recipe) %></td>
-        <td><%= link_to 'Edit Recipe', edit_author_recipe_path(@author, recipe) %></td>
-        <td><%= link_to 'Destroy', [@author, recipe], method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+        </tr>
+        </table>
+        <p><%= recipe.comment %></p>
+      </div>
+        <br>
+        <div class="controls">
+        <%= link_to 'Show Author', [@author] %><p>
+        <%= link_to 'show ingredients', recipe_ingredients_path(recipe) %>
+        <%= link_to 'add ingredients', new_recipe_ingredient_path(recipe) %><
+        <%= link_to 'Edit Recipe', edit_author_recipe_path(@author, recipe) %><
+        <%= link_to 'Destroy', [@author, recipe], method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </div>
     <% end %>
-  </tbody>
-</table>
+ </div>
 
 <br>
 
-<%= link_to 'go back to author', author_recipes_path(@author) %>
+<%= link_to 'go back to author', author_path(@author) %>
 <%= link_to 'New Recipe', new_author_recipe_path(@author) %>

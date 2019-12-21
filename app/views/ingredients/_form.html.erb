@@ -22,8 +22,8 @@
   </div>
 
   <div class="field">
-    <%= form.label :units %>
-    <%= form.text_field :units %>
+    <%= form.label :unit %>
+    <%= select(:ingredient, :units, [['g'], ['ml'],['pcs']]) %>
   </div>
 
   <div class="actions">
