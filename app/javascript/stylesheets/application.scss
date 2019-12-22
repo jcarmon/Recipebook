@@ -1,55 +1,37 @@
 @import "~bootstrap/scss/bootstrap";
 @import url('https://fonts.googleapis.com/css?family=Merriweather:400,700');
 
-.navbar {
-        margin-bottom: 0;
-        background: $black;
-}
 body {
         background: lightgrey;
         color: black;
-        font-family: 'Merriweather', sans-serif;
+        font-family: 'Merriweather', sans-serif;   
+.container{
+        justify-content: center;
 }
-h1,
-h2 {
-        font-weight: bold;
+        
+
 }
-p {
-        font-size: 16px;
+.author-box{
+        border: 5px solid black;
+        padding:15px;
+}
+
+.buttons{
+        margin: 0 auto;
+}
+
+.btn{
+        background-color: red;
+        border: 5px solid black;
+        margin: 10px 3px;
+}
+.author-box a {
         color: black;
-}
-a:visited {
-        color: $black;
-}
-
-.link {
-        color: $white;
-}
-.btn-primary {
-        color: $white;
-        border-color: $white;
-        margin-bottom: 5px;
-}
-.btn-sm {
-        background-color: $white;
-        display: inline-block;
-}
-img,
-video,
-audio {
-        margin-top: 20px;
-        max-width: 80%;
-}
-caption {
-
-        float: left;
-        clear: both;
 
 }
 
-div{
-        /*border:  3px solid; */
-        display: flex; 
-        padding: 5px;
-
+.recipe-display {
+        padding: 10px;
+        text-align: center;
+        font-size: 12px;
 }
