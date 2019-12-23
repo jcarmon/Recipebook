@@ -6,25 +6,25 @@ class IngredientsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get index" do
-    get ingredients_url
+    get recipe_ingredients_url
     assert_response :success
   end
 
   test "should get new" do
-    get new_ingredient_url
+    get new_recipe_ingredients_url
     assert_response :success
   end
 
   test "should create ingredient" do
     assert_difference('Ingredient.count') do
-      post ingredients_url, params: { ingredient: { amount: @ingredient.amount, name: @ingredient.name, units: @ingredient.units } }
+      post recipe_ingredients_url, params: { ingredient: { amount: @ingredient.amount, name: @ingredient.name, units: @ingredient.units } }
     end
 
-    assert_redirected_to ingredient_url(Ingredient.last)
+    assert_redirected_to recipe_ingredients_url(Ingredient.last)
   end
 
   test "should show ingredient" do
-    get ingredient_url(@ingredient)
+    get recipe_ingredient_url(@ingredient)
     assert_response :success
   end
 
@@ -34,13 +34,13 @@ class IngredientsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update ingredient" do
-    patch ingredient_url(@ingredient), params: { ingredient: { amount: @ingredient.amount, name: @ingredient.name, units: @ingredient.units } }
+    patch recipe_ingredients_url(@ingredient), params: { ingredient: { amount: @ingredient.amount, name: @ingredient.name, units: @ingredient.units } }
     assert_redirected_to ingredient_url(@ingredient)
   end
 
   test "should destroy ingredient" do
     assert_difference('Ingredient.count', -1) do
-      delete ingredient_url(@ingredient)
+      delete recipe_ingredient_url(@author,@ingredient)
     end
 
     assert_redirected_to ingredients_url

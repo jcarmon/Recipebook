@@ -1,8 +1,8 @@
 
 <div class="container"> 
   <div class="row ">
-  <div class="text-center">
-  <h1>Authors</h1>
+  <div>
+  <h1>Authors and recipes</h1>
   </div>
   </div>
     <% @authors.each do |author| %>
@@ -25,26 +25,33 @@
           </div>
           <div class="btn btn-sm">
           <%= link_to 'Delete', author, method: :delete, data: { confirm: 'Are you sure?' } %>
-          </div>  
+          </div>
+          <div class="btn btn-sm">
+          <%= link_to 'New Recipe', new_author_recipe_path(author) %>
+          </div>
+          <h6><%= link_to 'See All Recipes', author_recipes_path(author) %> </h6>  
           </div>
         </div>
        </div>   
       </div>
-      <div class="col-md-6"> 
-            <h6>Recipes</h6>
+      <div class="col-md-6">
+           <div class="recipe-scroll overflow-auto">
             <% author.recipes.each do |recipe| %>
-            <div class="recipes">
-              <ul>
-              <li><%= recipe.title %></li>
+            <div>
+              <ul class="list-group">
+              <li class="list-group-item"><%= recipe.title %>
               <%= link_to 'See recipe', author_recipe_path(author,recipe) %>
               </ul>
             </div> 
             <% end %>
-          </div>  
+            </div>
+            
+      </div>  
   </div>  
     <% end %>  
      <div class="row">
-      <div class="col-md-6 col-lg-4 col-xl-3 text-center">
+
+      <div class="btn">
         <%= link_to 'New Author', new_author_path %>
       </div>
       <div>
@@ -55,3 +62,6 @@
 </div>
 
 
+ <div id="new-author">
+        <%= link_to 'New Author',  new_author_path, remote: true %>
+  </div>

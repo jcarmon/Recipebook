@@ -1,14 +1,19 @@
 @import "~bootstrap/scss/bootstrap";
-@import url('https://fonts.googleapis.com/css?family=Merriweather:400,700');
+
 
 body {
         background: lightgrey;
         color: black;
-        font-family: 'Merriweather', sans-serif;   
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        
+
+
 .container{
         justify-content: center;
 }
-        
+.row{
+        justify-content: center;
+}        
 
 }
 .author-box{
@@ -30,8 +35,14 @@ body {
 
 }
 
-.recipe-display {
-        padding: 10px;
-        text-align: center;
-        font-size: 12px;
+.recipe-scroll {
+        height: 136px;
+       
+}
+.list-group-item{
+       
+        display: flex;
+        justify-content: space-between;
+
+
 }

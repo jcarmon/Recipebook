@@ -11,27 +11,27 @@
     </div>
   <% end %>
 
-  <div>
-  <h1> Author </h1>
-    <%= @author.first_name + " " +@author.last_name%>
+  <div class="field form-group">
+    <%= form.label :title, class: 'col-sm-2 control-label' %>
+    <div class="col-sm-6">
+      <%= form.text_field :title, class: 'form-control' %>
+    </div>
   </div>
-
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
-  </div>
-
-  <div class="field">
-    <%= form.label :difficulty %>
+  <div class="field form-group">
+    <%= form.label :difficulty, class: 'col-sm-2 control-label' %>
     <%= select(:recipe, :difficulty, [['Easy'], ['Intermediate'],['Pro'],['Chef']]) %>
-  </div>
-
-  <div class="field">
-    <%= form.label :comment %>
+  <div class="field form-group"> 
+   <%= form.label :comment, class: 'col-sm-2 control lable'%> 
+    <div class="col-sm-10">
     <%= form.text_area :comment %>
+    </div>
   </div>
-
-  <div class="actions">
-    <%= form.submit %>
+  <div class="actions form-group">
+    <div class="col-sm-offset-2 col-sm-10">
+      <%= form.submit %>
+    </div>
   </div>
 <% end %>
+
+
+
