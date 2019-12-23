@@ -5,21 +5,19 @@
   <%= @recipe.title %>
 </p>
 
-<p>
-  <strong>Author:</strong>
-  <%= @recipe.author %>
-</p>
 
 <p>
   <strong>Difficulty:</strong>
   <%= @recipe.difficulty %>
 </p>
 
-<p>
-  <strong>Ingredients:</strong>
-  <%= @recipe.ingredients %>
-</p>
-
+<div class ingredients> 
+  <ul>
+  <% @recipe.ingredients.each do |ingredient| %>
+  <li><%= ingredient.name %></li> 
+  <% end %>
+  </ul> 
+ </div>
 <p>
   <strong>Comment:</strong>
   <%= @recipe.comment %>

@@ -18,7 +18,8 @@
         <p><%= recipe.comment %></td></p> 
        </div>
        </li>
-        <%= link_to 'back to Author', [@author] %></td>
+        <%= link_to 'back to Author', [@author] %>
+       <%= link_to 'see recipe', author_recipe_path(@author,recipe) %> 
        <%= link_to 'show ingredients', recipe_ingredients_path(recipe) %>
       <%= link_to 'add ingredients', new_recipe_ingredient_path(recipe) %>
      <%= link_to 'Edit Recipe', edit_author_recipe_path(@author, recipe) %>

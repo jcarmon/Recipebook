@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 2019_12_18_185331) do
     t.string "units"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "recipe_id"
+    t.integer "recipe_id" ,
   end
 
   create_table "recipes", force: :cascade do |t|
@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 2019_12_18_185331) do
     t.text "comment"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "author_id"
+    t.integer "author_id", 
   end
 
 end

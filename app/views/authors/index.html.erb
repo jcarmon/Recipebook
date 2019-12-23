@@ -7,7 +7,7 @@
   </div>
     <% @authors.each do |author| %>
     <div class="row">
-      <div class="col-md-12">
+      <div class="col-md-6">
         <div class="author-box text-center">
           <div>
           <h3><%= author.first_name  + " " + author.last_name %></h3>
@@ -25,14 +25,22 @@
           </div>
           <div class="btn btn-sm">
           <%= link_to 'Delete', author, method: :delete, data: { confirm: 'Are you sure?' } %>
-          </div>
-          <div class="btn btn-sm">
-           <%= link_to 'See recipes', author_recipes_path(author) %>
-          </div>
+          </div>  
           </div>
         </div>
        </div>   
       </div>
+      <div class="col-md-6"> 
+            <h6>Recipes</h6>
+            <% author.recipes.each do |recipe| %>
+            <div class="recipes">
+              <ul>
+              <li><%= recipe.title %></li>
+              <%= link_to 'See recipe', author_recipe_path(author,recipe) %>
+              </ul>
+            </div> 
+            <% end %>
+          </div>  
   </div>  
     <% end %>  
      <div class="row">
