@@ -2,28 +2,32 @@
 <div class="container">
 <h1>Recipes</h1>
     <% @recipes.each do |recipe| %> 
-      <ul>
+      <ul class="recipes-list">
        <li>
        <div class= "recipe">
-        <h4><%= recipe.title %></h4>
+        <h2><%= recipe.title %></h2>
+        <h6>Author</h6>
         <p><%= recipe.author.first_name%></p>
+        <h6>difficulty</h6>
         <p><%= recipe.difficulty %></p>
-        <div class ingredients> 
+        <h6>ingredients</h6>
+        <div class= "ingredients"> 
           <ul>
           <% recipe.ingredients.each do |ingredient| %>
           <li><%= ingredient.name %></li> 
           <% end %>
           </ul> 
         </div>
+        <h6>Comment</h6>
         <p><%= recipe.comment %></td></p> 
        </div>
        </li>
-        <%= link_to 'back to Author', [@author] %>
-       <%= link_to 'see recipe', author_recipe_path(@author,recipe) %> 
-       <%= link_to 'show ingredients', recipe_ingredients_path(recipe) %>
-      <%= link_to 'add ingredients', new_recipe_ingredient_path(recipe) %>
-     <%= link_to 'Edit Recipe', edit_author_recipe_path(@author, recipe) %>
-        <%= link_to 'Destroy', [@author, recipe], method: :delete, data: { confirm: 'Are you sure?' } %>
+        <%= link_to 'back to Author', [@author], class: "btn-primary btn-sm" %>
+       <%= link_to 'see recipe', author_recipe_path(@author,recipe), class: "btn-primary btn-sm" %> 
+       <%= link_to 'show ingredients', recipe_ingredients_path(recipe), class: "btn-primary btn-sm" %>
+      <%= link_to 'add ingredients', new_recipe_ingredient_path(recipe), class: "btn-primary btn-sm" %>
+     <%= link_to 'Edit Recipe', edit_author_recipe_path(@author, recipe), class: "btn-primary btn-sm" %>
+        <%= link_to 'Destroy', [@author, recipe], class: "btn-primary btn-sm",method: :delete, data: { confirm: 'Are you sure?' } %>
        
       </ul>
     <% end %>
@@ -31,6 +35,6 @@
 
 <br>
 
-<%= link_to 'go back to author', authors_path(@author) %>
-<%= link_to 'New Recipe', new_author_recipe_path(@author) %>
+<%= link_to 'go back to author', authors_path(@author), class: "btn-primary btn-sm" %>
+<%= link_to 'New Recipe', new_author_recipe_path(@author), class: "btn-primary btn-sm" %>
 </div>

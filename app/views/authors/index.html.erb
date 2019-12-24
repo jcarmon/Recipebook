@@ -17,19 +17,19 @@
           </div>
         <div class="row">
           <div class="buttons">
-          <div class="btn btn-sm">
-          <%= link_to 'Show', author %>
+          <div> 
+          <%= link_to 'Show', author, class:"btn btn-primary btn-sm" %>
           </div>
-          <div class="btn btn-sm"> 
-          <%= link_to 'Edit', edit_author_path(author) %>
+          <div> 
+          <%= link_to 'Edit', edit_author_path(author), class:"btn btn-primary btn-sm" %>
           </div>
-          <div class="btn btn-sm">
-          <%= link_to 'Delete', author, method: :delete, data: { confirm: 'Are you sure?' } %>
+          <div>
+          <%= link_to 'Delete', author, class:"btn btn-primary btn-sm", method: :delete, data: { confirm: 'Are you sure?' } %>
           </div>
-          <div class="btn btn-sm">
-          <%= link_to 'New Recipe', new_author_recipe_path(author) %>
+          <div>
+          <%= link_to 'New Recipe', new_author_recipe_path(author), class:"btn btn-primary btn-sm"%>
           </div>
-          <h6><%= link_to 'See All Recipes', author_recipes_path(author) %> </h6>  
+          <h6><%= link_to 'See All Recipes', author_recipes_path(author), class:"btn btn-primary btn-sm"%> </h6>  
           </div>
         </div>
        </div>   
@@ -51,8 +51,8 @@
     <% end %>  
      <div class="row">
 
-      <div class="btn">
-        <%= link_to 'New Author', new_author_path %>
+      <div>
+        <%= link_to 'New Author', new_author_path, class:"btns"%>
       </div>
       <div>
         <h4 id="notice"><%= notice %></h4>
@@ -63,5 +63,5 @@
 
 
  <div id="new-author">
-        <%= link_to 'New Author',  new_author_path, remote: true %>
+        <%= link_to 'New Author',  new_author_path, class:"btns", remote: true %>
   </div>
