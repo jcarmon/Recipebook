@@ -4,8 +4,12 @@ one:
   name: MyString
   amount: 9.99
   units: MyString
+  recipe_id: 1
+  recipe: one
 
 two:
   name: MyString
   amount: 9.99
   units: MyString
+  recipe_id: 1
+  recipe: two

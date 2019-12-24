@@ -6,7 +6,9 @@ one:
   difficulty: MyString
   ingredients: MyString
   comment: MyText
-  catagory: author
+  author_id: 1
+  author: one
+
 
 two:
   title: MyString
@@ -14,4 +16,6 @@ two:
   difficulty: MyString
   ingredients: MyString
   comment: MyText
-  catagory: author
+  author_id: 2
+  author: two
+ 

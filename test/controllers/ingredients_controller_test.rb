@@ -6,12 +6,12 @@ class IngredientsControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should get index" do
-    get recipe_ingredients_url
+    get recipe_ingredients_url(@ingredient)
     assert_response :success
   end
 
   test "should get new" do
-    get new_recipe_ingredients_url
+    get new_recipe_ingredient_url(@ingredient)
     assert_response :success
   end
 
