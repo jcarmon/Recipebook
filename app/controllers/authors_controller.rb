@@ -24,7 +24,10 @@ class AuthorsController < ApplicationController
   # POST /authors
   # POST /authors.json
   def create
+    puts author_params.inspect
     @author = Author.new(author_params)
+
+    puts @author.inspect
 
     respond_to do |format|
       if @author.save

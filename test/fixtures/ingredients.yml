@@ -3,7 +3,7 @@
 one:
   name: MyString
   amount: 9.99
-  units: MyString
+  units: g
   recipe_id: 1
   recipe: one
 

@@ -3,46 +3,47 @@ require 'test_helper'
 class RecipesControllerTest < ActionDispatch::IntegrationTest
   setup do
     @recipe = recipes(:one)
+    @author = authors(:one)
   end
 
   test "should get index" do
-    get recipes_url
+    get author_recipes_url(@recipe)
     assert_response :success
   end
 
   test "should get new" do
-    get new_recipe_url
+    get new_author_recipe_url(@recipe)
     assert_response :success
-  end
+   end
 
-  test "should create recipe" do
-    assert_difference('Recipe.count') do
-      post author_recipes_url, params: { recipe: { author: @recipe.author, comment: @recipe.comment, difficulty: @recipe.difficulty, ingredients: @recipe.ingredients, title: @recipe.title, author_id:@recipe.author_id } }
+   test "should create recipe" do
+     assert_difference('Recipe.count') do
+      post author_recipes_url(@author), params: { recipe: { title:@recipe.title, comment: @recipe.comment, difficulty: @recipe.difficulty, ingredients: @recipe.ingredients } }
     end
-
-    #assert_redirected_to author_recipes_url(Recipe.last)
+    
+    assert_redirected_to author_recipe_url(@author, Recipe.last)
   end
 
   test "should show recipe" do
-    get recipe_url(@recipe)
+    get author_recipe_url(@recipe ,@author)
     assert_response :success
   end
 
   test "should get edit" do
-    get edit_recipe_url(@recipe)
+    get edit_author_recipe_url(@recipe, @author)
     assert_response :success
   end
 
   test "should update recipe" do
-    patch recipe_url(@recipe), params: { recipe: { author: @recipe.author, comment: @recipe.comment, difficulty: @recipe.difficulty, ingredients: @recipe.ingredients, title: @recipe.title } }
-    assert_redirected_to recipe_url(@recipe)
+    patch author_recipe_url(@recipe, @author), params: { recipe: { title:@recipe.title,author: @recipe.author, comment: @recipe.comment, difficulty: @recipe.difficulty, ingredients: @recipe.ingredients } }
+    assert_redirected_to author_recipe_url(@recipe, @author)
   end
 
   test "should destroy recipe" do
     assert_difference('Recipe.count', -1) do
-      delete recipe_url(@recipe)
+      delete author_recipe_url(@author, @recipe)
     end
 
-    assert_redirected_to recipes_url
+    assert_redirected_to author_recipes_url
   end
 end
