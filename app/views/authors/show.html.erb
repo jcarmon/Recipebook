@@ -1,30 +1,45 @@
 <p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="author-card col-md-3">
+    <h4>Author </h4>
+  <p>
+    <strong>First name:</strong>
+    <%= @author.first_name %>
+  </p>
 
-<p>
-  <strong>First name:</strong>
-  <%= @author.first_name %>
-</p>
+  <p>
+    <strong>Last name:</strong>
+    <%= @author.last_name %>
+  </p>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @author.last_name %>
-</p>
+  <p>
+  
+    <strong>Email:</strong>
+    <%= @author.email %>
+  </p>
+  <div class ="row">
+    <div class="buttons">
+    <%= link_to 'Edit', edit_author_path(@author), class: "btn btn-primary btn-sm" %> 
+    </div>
+  </div>
+</div>
 
-<p>
-  <strong>Email:</strong>
-  <%= @author.email %>
-</p>
+  <div class="row">
+    <div class="recipe-card col-9 ">
+      <h4>Recipes </h4>
+      <% for recipes in @author.recipes %>
+      <div class="recipes-list">
+        <ul>
+          <li><h4><%= recipes.title %></h4></li>
+          <li><%= recipes.comment %></li>
+          <%= link_to 'see recipe', author_recipes_path(@author), class: "btn btn-secondary btn-sm" %> 
+        </ul>
+       </div> 
+      <% end %>
+      <%= link_to 'Add recipe', new_author_recipe_path(@author), class: "btn btn-primary btn-sm" %>
+    </div>
+  </div>
+    <%= link_to 'Back', authors_path, class: "btn btn-primary" %>
+</div>
 
-<h4>recipes </h4>
-<% for recipes in @author.recipes %>
-    <ul>
-      <li><%= recipes.title %></li>
-      <%= link_to 'see recipe', author_recipes_path(@author) %> |
-  </ul>
-<% end %>
-
-
-<%= link_to 'Edit', edit_author_path(@author) %> |
-<%= link_to 'Add recipe', new_author_recipe_path(@author) %>
-<%= link_to 'Back', authors_path %>
 

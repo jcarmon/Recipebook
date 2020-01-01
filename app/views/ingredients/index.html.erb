@@ -28,5 +28,5 @@
 
 <br>
 
-<%= link_to 'New Ingredient', new_recipe_ingredient_path %>
-<%= link_to 'See authors', authors_path %>
+<%= link_to 'New Ingredient', new_recipe_ingredient_path, class:"btn btn-primary btn-sm" %>
+<%= link_to 'See Recipe', author_recipe_path(@recipe.author_id, @recipe), class:"btn btn-primary"  %> 

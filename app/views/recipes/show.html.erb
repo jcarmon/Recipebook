@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-<div class="container recipe-show">
+<div class="recipe-show">
   <h1>
     <%= @recipe.title %>
   </h1>
@@ -27,13 +27,14 @@
     <% end %>
     </ul> 
   </div>
-
-
-  <%= link_to 'Edit', edit_author_recipe_path(@author, @recipe) %> |
-  <%= link_to 'Destroy', [@author, @recipe], method: :delete, data: { confirm: 'Are you sure?' } %>
-  <%= link_to 'Add Ingredients', new_recipe_ingredient_path(@recipe) %>
-<%= link_to 'Back', authors_path%>
 </div>
-<div id="new-boobs">
+<div class="row-cols-4">
+  <%= link_to 'Edit', edit_author_recipe_path(@author, @recipe), class:"btn btn-primary" %> 
+  <%= link_to 'Add Ingredients', new_recipe_ingredient_path(@recipe), class:"btn btn-primary" %> 
+  <%= link_to 'Back', authors_path, class:"btn btn-primary"%>
+   
+</div>
+<div class="edit-ctrls" id="new-boobs">
+<%= link_to 'Destroy', [@author, @recipe], method: :delete, data: { confirm: 'Are you sure?' }, class:"btn btn-secondary btn-sm" %> 
   <%= link_to 'Add Ingredients', new_recipe_ingredient_path(@recipe), remote: true %>
 </div>

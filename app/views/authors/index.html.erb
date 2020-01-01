@@ -1,10 +1,15 @@
 
-<div class="container"> 
-  <div class="row ">
-  <div>
+  <div class="row text-center">
+  <div class="col-12">
   <h1>Authors and recipes</h1>
   </div>
   </div>
+  <div class="row text-center">
+      <div class="col-6" id="new-author">
+        <%= link_to 'New Author',  new_author_path, class:"btns", remote: true %>
+      </div>
+  </div>
+  
     <% @authors.each do |author| %>
     <div class="row">
       <div class="col-md-6">
@@ -17,20 +22,20 @@
           </div>
         <div class="row">
           <div class="buttons">
-          <div> 
-          <%= link_to 'Show', author, class:"btn btn-primary btn-sm" %>
-          </div>
-          <div> 
-          <%= link_to 'Edit', edit_author_path(author), class:"btn btn-primary btn-sm" %>
-          </div>
-          <div>
-          <%= link_to 'Delete', author, class:"btn btn-primary btn-sm", method: :delete, data: { confirm: 'Are you sure?' } %>
-          </div>
-          <div>
-          <%= link_to 'New Recipe', new_author_recipe_path(author), class:"btn btn-primary btn-sm"%>
-          </div>
-          <h6><%= link_to 'See All Recipes', author_recipes_path(author), class:"btn btn-primary btn-sm"%> </h6>  
-          </div>
+            <div> 
+              <%= link_to 'Show', author, class:"btn btn-primary btn-sm" %>
+            </div>
+            <div> 
+              <%= link_to 'Edit', edit_author_path(author), class:"btn btn-primary btn-sm" %>
+            </div>
+            <div>
+              <%= link_to 'Delete', author, class:"btn btn-primary btn-sm", method: :delete, data: { confirm: 'Are you sure?' } %>
+            </div>
+            <div>
+              <%= link_to 'New Recipe', new_author_recipe_path(author), class:"btn btn-primary btn-sm"%>
+            </div>
+              <%= link_to 'See All Recipes', author_recipes_path(author), class:"btn btn-primary btn-sm"%>
+            </div>
         </div>
        </div>   
       </div>
@@ -38,7 +43,7 @@
            <div class="recipe-scroll overflow-auto">
             <% author.recipes.each do |recipe| %>
             <div>
-              <ul class="list-group">
+              <ul class="list-group ">
               <li class="list-group-item"><%= recipe.title %>
               <%= link_to 'See recipe', author_recipe_path(author,recipe) %>
               </ul>
@@ -49,19 +54,11 @@
       </div>  
   </div>  
     <% end %>  
-     <div class="row">
-
-      <div>
-        <%= link_to 'New Author', new_author_path, class:"btns"%>
-      </div>
       <div>
         <h4 id="notice"><%= notice %></h4>
       </div>   
     </div>
     </div> 
-</div>
 
 
- <div id="new-author">
-        <%= link_to 'New Author',  new_author_path, class:"btns", remote: true %>
-  </div>
+ 

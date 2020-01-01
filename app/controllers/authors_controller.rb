@@ -24,13 +24,13 @@ class AuthorsController < ApplicationController
   # POST /authors
   # POST /authors.json
   def create
-    puts author_params.inspect
+
     @author = Author.new(author_params)
 
-    puts @author.inspect
 
     respond_to do |format|
       if @author.save
+        format.js
         format.html { redirect_to @author, notice: 'Author was successfully created.' }
         format.json { render :show, status: :created, location: @author }
       else

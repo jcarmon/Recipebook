@@ -1,7 +1,12 @@
+
 <h1>Editing Recipe</h1>
 
 <%= render 'form', recipe: @recipe %>
-
-<%= link_to 'Show', [@author, @recipe] %> |
-<%= link_to 'Add Ingredients', new_recipe_ingredient_path(@recipe) %>
-<%= link_to 'Back', author_recipes_path(@author) %>
+<div class="row">
+<div class="edit-ctrls">
+<%= link_to 'Show', [@author, @recipe], class: "btn btn-primary"%> 
+</div>
+<div class="edit-ctrls">
+<%= link_to 'Back', author_recipes_path(@author), class: "btn btn-primary" %>
+</div>
+</div>
