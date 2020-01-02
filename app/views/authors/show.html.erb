@@ -15,10 +15,10 @@
       </div>
     </div>
     <div class="row justify-content-center">  
-      <div class="col-md-sm-4 ">
+      <div class="edit-ctrls col-md-sm-4 ">
         <%= link_to 'Edit', edit_author_path(@author), class: "btn btn-secondary btn-sm" %> 
       </div>
-      <div class="col-md-sm-4">
+      <div class="edit-ctrls col-md-sm-4">
           <%= link_to 'Back', authors_path, class: "btn btn-secondary btn-sm" %>
       </div>
     </div> 
@@ -30,22 +30,23 @@
   <div class="row justify-content-center">
    <h2>Recipes </h2>
   </div>  
-    <% for recipes in @author.recipes %>
+    <%@recipes.each do |recipe|%> 
       <div class="recipes-list">
-         <h4><%= recipes.title %></h4>
-         <p><%= recipes.comment %></p>
+         <h4><%= recipe.title %></h4>
+         <p><%= recipe.comment %></p>
          <br>
         
         <div class="row box">
           <div class ="col-md-12">  
-            <%= link_to 'see recipe', author_recipe_path(@author), class: "btn btn-secondary btn-block" %> 
+            <%= link_to 'see recipe', author_recipe_path(@author,recipe), class: "btn btn-secondary btn-block" %> 
           </div>
          
       </div>  
+ 
+
   </div> 
-  <% end %>
-
-
+<% end %>
+</div>
 
 
 
@@ -58,6 +59,12 @@
 
 <!-------------------
 ##
+
+
+
+
+
+
 <div class="row">
   <div class="author-card col-md-3">
     <h4>Author </h4>

@@ -10,6 +10,7 @@ class AuthorsController < ApplicationController
   # GET /authors/1
   # GET /authors/1.json
   def show
+    @recipes = @author.recipes
   end
 
   # GET /authors/new
@@ -31,7 +32,7 @@ class AuthorsController < ApplicationController
     respond_to do |format|
       if @author.save
         format.js
-        format.html { redirect_to @author, notice: 'Author was successfully created.' }
+        format.html #{ redirect_to @author, notice: 'Author was successfully created.' }
         format.json { render :show, status: :created, location: @author }
       else
         format.html { render :new }
@@ -45,6 +46,7 @@ class AuthorsController < ApplicationController
   def update
     respond_to do |format|
       if @author.update(author_params)
+        format.js
         format.html { redirect_to @author, notice: 'Author was successfully updated.' }
         format.json { render :show, status: :ok, location: @author }
       else

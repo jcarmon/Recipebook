@@ -1,12 +1,11 @@
 
   <div class="row text-center">
     <div class="col-12">
-      <h1>Authors and recipes</h1>
-    </div>
-    <div class="row">
-        <h4 id="notice"><%= notice %></h4>
-      </div>  
+      <h1>Authors and Recipes</h1>
+      <h4 id="notice"><%= notice %></h4>
+    </div>  
   </div>
+  
   <div class="row justify-content-center">
       <div class="col-md-12" id="new-author">
         <%= link_to 'New Author',  new_author_path, class:"btns", remote: true %>
@@ -23,32 +22,37 @@
           <div>
           <p><%= author.email %></p>
           </div>
-        <div class="row">
-          <div class="buttons">
-            <div> 
-              <%= link_to 'Show', author, class:"btn btn-primary btn-sm" %>
+       
+          <div class="row justify-content-center"> 
+            <div class="col-md-2"> 
+              <%= link_to 'Show', author, class:"btn btn-outline-primary btn-sm" %>
             </div>
-            <div> 
-              <%= link_to 'Edit', edit_author_path(author), class:"btn btn-primary btn-sm" %>
+            <div class="col-md-2"> 
+              <%= link_to 'Edit', edit_author_path(author), class:"btn btn-outline-primary btn-sm" %>
             </div>
-            <div>
-              <%= link_to 'Delete', author, class:"btn btn-primary btn-sm", method: :delete, data: { confirm: 'Are you sure?' } %>
+            <div class="col-md-2">
+              <%= link_to 'Delete', author, class:"btn btn-danger btn-sm", method: :delete, data: { confirm: 'Are you sure?' } %>
             </div>
-            <div>
-              <%= link_to 'New Recipe', new_author_recipe_path(author), class:"btn btn-primary btn-sm"%>
+          </div>
+          <div class="edit-ctrls row justify-content-center">  
+            <div class="col-md-6">
+              <%= link_to 'New Recipe', new_author_recipe_path(author), class:"btn btn-primary btn-block"%>
             </div>
-              <%= link_to 'See All Recipes', author_recipes_path(author), class:"btn btn-primary btn-sm"%>
+            <div class="col-md-6">
+              <%= link_to 'All Recipes', author_recipes_path(author), class:"btn btn-outline-info btn-block"%>
             </div>
-        </div>
+          </div>    
+      
        </div>   
       </div>
       <div class="col-md-6">
            <div class="recipe-scroll overflow-auto">
             <% author.recipes.each do |recipe| %>
             <div>
-              <ul class="list-group ">
-              <li class="list-group-item"><%= recipe.title %>
-              <%= link_to 'See recipe', author_recipe_path(author,recipe) %>
+              <ul class="list-group">
+              <li class="list-group-item d-flex justify-content-between">
+              <h6><%= recipe.title %></h6>
+              <%= link_to 'See recipe', author_recipe_path(author,recipe), class:"btn-outline-info btn-sm"%></li>
               </ul>
             </div> 
             <% end %>

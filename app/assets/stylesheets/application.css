@@ -10,10 +10,21 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+
+ 	#96bed8 	Primary
+ 	#4f627e 	Info
+	#62b479 	Success
+ 	#e0a341 	Warning
+ 	#f44336 	Danger
+
  *= require_tree .
  *= require_self
  */
 
+.btn-main{
+        color: white;
+        background-color : #96bed8; 
+}
 
  body {
          background: lightgrey;
@@ -28,16 +39,17 @@
 }
 
  .author-box{
-         border: 5px solid black;
+         border: 2px solid black;
          padding:15px;
-         background-color: antiquewhite;
- }
+         background-color:#96bed8 ;
+         margin-bottom: 10px;
+ }      
  
  .buttons{
          display: flex;
          flex-wrap: wrap;
          justify-content: center;
-         margin: auto;
+         margin: ;
          padding: 5px;
  }
 
@@ -68,10 +80,11 @@
 
 }
 .author-card{
-        background-color: antiquewhite;
+        background-color: #96bed8;
         padding:10px;
         line-height: 1.25;
         text-align: center;
+        border: 1px solid;
 
 
 }
@@ -81,8 +94,9 @@
 /* recipes page */
  .recipe{
          display: block;
-         border: 3px solid;
+         border: 1px solid;
          padding: 15px 20px;
+        background-color: #96bed8 ;
  
 } 
 
@@ -99,7 +113,12 @@
 }
 
 .recipe-btn{
-        justify-content: space-evenly;
         margin:5px;
         
+}
+
+.recipe-show{
+        background-color: #96bed8;
+        border: 10px solid #4f627e;
+        padding:20px;
 }

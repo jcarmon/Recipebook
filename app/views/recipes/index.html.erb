@@ -23,13 +23,13 @@
         <p><%= recipe.comment %></p> 
       
      <div class="row ">
-         <div class="recipe-btn col-sm-1">
+         <div class="recipe-btn col-sm-2">
         <%= link_to 'Add Ingredients', new_recipe_ingredient_path(recipe), class: "btn btn-primary btn-sm" %> 
         </div>
-         <div class="recipe-btn col-sm-1">
+         <div class="recipe-btn col-sm-2">
         <%= link_to 'Edit Recipe', edit_author_recipe_path(@author, recipe), class: "btn btn-primary btn-sm" %> 
         </div>
-         <div class="recipe-btn col-sm-1">
+         <div class="recipe-btn col-sm-2">
           <%= link_to 'Destroy', [@author, recipe], class: "btn btn-secondary btn-sm",method: :delete, data: { confirm: 'Are you sure?' } %> 
         </div>
      </div>    
