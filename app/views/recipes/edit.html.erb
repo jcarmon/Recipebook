@@ -2,11 +2,10 @@
 <h1>Editing Recipe</h1>
 
 <%= render 'form', recipe: @recipe %>
+
 <div class="row">
-<div class="edit-ctrls">
-<%= link_to 'Show', [@author, @recipe], class: "btn btn-primary"%> 
-</div>
-<div class="edit-ctrls">
+
+<div class="col-md-12">
 <%= link_to 'Back', author_recipes_path(@author), class: "btn btn-primary" %>
 </div>
 </div>

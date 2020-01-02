@@ -22,10 +22,11 @@
          
  }
 
- li{
+#new-author{
+        margin-bottom: 10px;
 
- }
- 
+}
+
  .author-box{
          border: 5px solid black;
          padding:15px;
@@ -63,12 +64,14 @@
 /* button row of the editing page */
  .edit-ctrls{
          padding: 10px 5px;
+         justify-content: flex-end;
 
 }
 .author-card{
         background-color: antiquewhite;
         padding:10px;
         line-height: 1.25;
+        text-align: center;
 
 
 }
@@ -90,6 +93,13 @@
         align-content: center;
 }
 
+.recipes-list{   
+        margin-top: 20px;
+        border: 3px solid;   
+}
+
 .recipe-btn{
+        justify-content: space-evenly;
+        margin:5px;
         
 }

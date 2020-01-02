@@ -1,4 +1,63 @@
 <p id="notice"><%= notice %></p>
+
+<p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="author-card col-md-12 justify-content-center">
+    <h1><%= @author.first_name %> <%= @author.last_name %><h1>
+  <p>
+    <strong>Email:</strong>
+    <%= @author.email %>
+  </p>
+
+    <div class ="row justify-content-center">
+      <div class="col-md-6">  
+        <%= link_to 'Add recipe', new_author_recipe_path(@author), class: "btn btn-primary btn-block" %>
+      </div>
+    </div>
+    <div class="row justify-content-center">  
+      <div class="col-md-sm-4 ">
+        <%= link_to 'Edit', edit_author_path(@author), class: "btn btn-secondary btn-sm" %> 
+      </div>
+      <div class="col-md-sm-4">
+          <%= link_to 'Back', authors_path, class: "btn btn-secondary btn-sm" %>
+      </div>
+    </div> 
+    </div>   
+  </div>
+ </div>
+<div class="recipe-list row justify-content-center">
+  <div class="col-md-10">
+  <div class="row justify-content-center">
+   <h2>Recipes </h2>
+  </div>  
+    <% for recipes in @author.recipes %>
+      <div class="recipes-list">
+         <h4><%= recipes.title %></h4>
+         <p><%= recipes.comment %></p>
+         <br>
+        
+        <div class="row box">
+          <div class ="col-md-12">  
+            <%= link_to 'see recipe', author_recipe_path(@author), class: "btn btn-secondary btn-block" %> 
+          </div>
+         
+      </div>  
+  </div> 
+  <% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+<!-------------------
+##
 <div class="row">
   <div class="author-card col-md-3">
     <h4>Author </h4>

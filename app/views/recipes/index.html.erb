@@ -1,12 +1,13 @@
-<div class="row">
+<div class="row text-align-center">
 <p id="notice"><%= notice %></p>
  <h1>Recipes</h1>
- 
 </div>
+
+
 
 <div class="row">
     <% @recipes.each do |recipe| %>
-    <div class="recipe""> 
+    <div class="recipe col-md-12"> 
         <h2><%= recipe.title %></h2>
         <h6>Author: <%= recipe.author.first_name%> <%= recipe.author.last_name%></h6>
         <h6>Difficulty: <%= recipe.difficulty %></h6>
@@ -14,7 +15,7 @@
         <div class= "ingredients"> 
           <ul>
           <% recipe.ingredients.each do |ingredient| %>
-          <li><%= ingredient.name %></li> 
+         <li><%= ingredient.amount %> <%= ingredient.units %> .......... <%= ingredient.name %></li> 
           <% end %>
           </ul> 
         </div>
@@ -22,13 +23,13 @@
         <p><%= recipe.comment %></p> 
       
      <div class="row ">
-         <div class="recipe-btn col-sm-3">
+         <div class="recipe-btn col-sm-1">
         <%= link_to 'Add Ingredients', new_recipe_ingredient_path(recipe), class: "btn btn-primary btn-sm" %> 
         </div>
-         <div class="recipe-btn col-sm-3">
+         <div class="recipe-btn col-sm-1">
         <%= link_to 'Edit Recipe', edit_author_recipe_path(@author, recipe), class: "btn btn-primary btn-sm" %> 
         </div>
-         <div class="recipe-btn col-sm-3">
+         <div class="recipe-btn col-sm-1">
           <%= link_to 'Destroy', [@author, recipe], class: "btn btn-secondary btn-sm",method: :delete, data: { confirm: 'Are you sure?' } %> 
         </div>
      </div>    
@@ -39,9 +40,6 @@
 
 
   <div class="row edit-ctrls">
-    <div class="col-md-2">
-    <%= link_to 'New Recipe', new_author_recipe_path(@author), class: "btn btn-primary btn-sm" %>
-    </div>
     <div class="col-md-2">
     <%= link_to 'go back to author', authors_path(@author), class: "btn btn-primary btn-sm" %>
     </div>

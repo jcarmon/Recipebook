@@ -1,11 +1,14 @@
 
   <div class="row text-center">
-  <div class="col-12">
-  <h1>Authors and recipes</h1>
+    <div class="col-12">
+      <h1>Authors and recipes</h1>
+    </div>
+    <div class="row">
+        <h4 id="notice"><%= notice %></h4>
+      </div>  
   </div>
-  </div>
-  <div class="row text-center">
-      <div class="col-6" id="new-author">
+  <div class="row justify-content-center">
+      <div class="col-md-12" id="new-author">
         <%= link_to 'New Author',  new_author_path, class:"btns", remote: true %>
       </div>
   </div>
@@ -54,9 +57,7 @@
       </div>  
   </div>  
     <% end %>  
-      <div>
-        <h4 id="notice"><%= notice %></h4>
-      </div>   
+      
     </div>
     </div> 
 
