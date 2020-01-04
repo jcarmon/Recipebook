@@ -5,6 +5,7 @@ class AuthorsController < ApplicationController
   # GET /authors.json
   def index
     @authors = Author.all
+    puts @authors
   end
 
   # GET /authors/1
@@ -27,7 +28,6 @@ class AuthorsController < ApplicationController
   def create
 
     @author = Author.new(author_params)
-
 
     respond_to do |format|
       if @author.save

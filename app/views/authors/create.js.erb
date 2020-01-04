@@ -1,2 +1,3 @@
-$('new-author form').remove();
-$('new-author form').show();   
+$('#new-author form').remove();
+$('#new-author a').show();
+$('div#author div.authorlist').append("<%= j render @author %>");   

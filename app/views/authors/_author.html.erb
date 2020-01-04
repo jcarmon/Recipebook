@@ -1,0 +1,49 @@
+
+    
+      
+    <div class="col-md-6">  <!--this is the column containing the rightside of the author info-->
+          <div class="author-box text-center">  <!--this is the text in the author card-->
+            <div>
+            <h3><%= author.first_name  + " " + author.last_name %></h3>
+            </div>
+            <div>
+            <p><%= author.email %></p>
+            </div>  <!--this is the end of the text in the author card-->
+        
+            <div class="row justify-content-center">  <!--this is the button row in the author card-->
+              <div class="col-md-2"> 
+                <%= link_to 'Show', author, class:"btn btn-outline-primary btn-sm" %>
+              </div>
+              <div class="col-md-2"> 
+                <%= link_to 'Edit', edit_author_path(author), class:"btn btn-outline-primary btn-sm" %>
+              </div>
+              <div class="col-md-2">
+                <%= link_to 'Delete', author, class:"btn btn-danger btn-sm", method: :delete, data: { confirm: 'Are you sure?' } %>
+              </div>
+            </div>
+            <div class="edit-ctrls row justify-content-center">  
+              <div class="col-md-6">
+                <%= link_to 'New Recipe', new_author_recipe_path(author), class:"btn btn-primary btn-block"%>
+              </div>
+              <div class="col-md-6">
+                <%= link_to 'All Recipes', author_recipes_path(author), class:"btn btn-outline-info btn-block"%>
+              </div>
+            </div>  <!--this is the end of the button row in the author card-->    
+            
+          </div>  <!--this is the text in the author card--> 
+        </div> <!--this is the column containing the rightside of the author info--> 
+
+        <div class="col-md-6">  <!--this is the column containing the left side of the author info--> 
+          <div class="recipe-scroll overflow-auto">
+          <% author.recipes.each do |recipe| %>
+            <div>
+              <ul class="list-group">
+              <li class="list-group-item d-flex justify-content-between">
+              <h6><%= recipe.title %></h6>
+              <%= link_to 'See recipe', author_recipe_path(author,recipe), class:"btn-outline-info btn-sm"%></li>
+              </ul>
+            </div> 
+          <% end %>
+          </div>     
+        </div>  <!--this is the column containing the left side of the author info-->
+       

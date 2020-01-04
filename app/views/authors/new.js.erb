@@ -1,1 +1,1 @@
-$('#new-author a').parent().html("<%= j render 'form', author: @author %>" )
+$('#new-author a').hide().parent().append("<%= j render 'form', author: @author %>" )

@@ -33,6 +33,10 @@
          
  }
 
+ #author{
+         border: 3px solid black;
+ }
+
 #new-author{
         margin-bottom: 10px;
 
