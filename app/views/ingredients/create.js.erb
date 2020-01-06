@@ -1,0 +1,5 @@
+$('#new-ingredient form').remove();
+$('#new-ingredient a').show();
+console.log("<%=@recipe%>");
+$('#ingredient-list').append('<li><%= @recipe.ingredients.last.amount %> <%=@recipe.ingredients.last.units %> ............ <%= @recipe.ingredients.last.name %></li>'); 
+      

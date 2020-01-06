@@ -1,4 +1,4 @@
-<%= form_with(model:[@author, recipe], local: true) do |form| %>
+<%= form_with(model:[@author, recipe]) do |form| %>
   <% if recipe.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(recipe.errors.count, "error") %> prohibited this recipe from being saved:</h2>
@@ -10,25 +10,20 @@
       </ul>
     </div>
   <% end %>
-  <div class="field form-group recipe-form">
-    <%= form.label :title, class: 'cols-2' %>
-    <div class="col-sm-3 ">
-      <%= form.text_field :title, class: 'form-control' %>
-    </div>
+  <div class="field">
+    <%= form.label :title%>
+    <%= form.text_field :title, class: 'col-md-12 control-label form-control' %>
   </div>
-  <div class="field form-group">
-    <%= form.label :difficulty, class: 'col-md-2 col-lg-1 control-label' %>
+  <div class="field">
+    <%= form.label :difficulty %>
     <%= select(:recipe, :difficulty, [['Easy'], ['Intermediate'],['Pro'],['Chef']]) %>
-  <div class="field form-group"> 
-   <%= form.label :comment, class: 'col-sm-2 control lable'%> 
-    <div class="col-md-12">
-    <%= form.text_area :comment %>
+  <div class="field "> 
+   <%= form.label :comment%> 
+    <%= form.text_area :comment, class:'col-md-12' %>
     </div>
   </div>
-  <div class="actions form-group">
-    <div class="col-sm-offset-2 col-sm-10">
+  <div class="actions ">
       <%= form.submit %>
-    </div>
   </div>
 <% end %>
 

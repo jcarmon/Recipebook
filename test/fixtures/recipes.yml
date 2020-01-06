@@ -2,13 +2,7 @@
 
 one:
   title: Brad
-  author: MyStringas
-  difficulty: MyStringer
-  ingredients: MyStringa
+  difficulty: easy
   comment: MyText
-  author_id: 30
-  author: one
-
-
-
+  author: one 
  

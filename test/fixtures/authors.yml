@@ -3,7 +3,8 @@
 one:
   first_name: John  
   last_name: Carmon
-  email: string
+  email: john@carmon.com
+  
 
  
 

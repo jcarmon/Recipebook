@@ -18,7 +18,6 @@
         <td><%= ingredient.name %></td>
         <td><%= ingredient.amount %></td>
         <td><%= ingredient.units %></td>
-        <td><%= link_to 'Show', [@recipe, ingredient] %></td>
         <td><%= link_to 'Edit', edit_recipe_ingredient_path(@recipe, ingredient) %></td>
         <td><%= link_to 'Destroy',[@recipe, ingredient], method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
