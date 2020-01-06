@@ -2,7 +2,7 @@
 
 <h1>Ingredients</h1>
 
-<table>
+<table class="ing-table">
   <thead>
     <tr>
       <th>Name</th>
@@ -27,5 +27,5 @@
 
 <br>
 
-<%= link_to 'New Ingredient', new_recipe_ingredient_path, class:"btn btn-primary btn-sm" %>
-<%= link_to 'See Recipe', author_recipe_path(@recipe.author_id, @recipe), class:"btn btn-primary"  %> 
+
+<%= link_to 'Back', author_recipe_path(@recipe.author_id, @recipe), class:"btn btn-primary btn-sm"  %> 

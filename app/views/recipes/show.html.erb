@@ -1,15 +1,17 @@
-<p id="notice"><%= notice %></p>
-
 <div class="recipe-show">
   <div class="row justify-content-center">
     <div>
+    <div class="row">
+      <h3 id="notice"><%= notice %></h3>
+    </div>
+  
     <h1>
       <%= @recipe.title %>
     </h1>
     </div>
   </div>
 <div class="row justify-content-center">
- <div> 
+ <div class=recipe-text> 
   <p>
     <strong>Author:</strong>
     <%= @recipe.author.first_name + ' ' + @recipe.author.last_name %>
@@ -27,7 +29,9 @@
  </div>
 </div> 
  <div class="row justify-content-center"> 
+ <div>
    <h6>Ingredients</h6>
+  </div>  
     <ul id="ingredient-list">
     <% @recipe.ingredients.each do |ingredient| %>
     <li><%= ingredient.amount %> <%=ingredient.units %> ............ <%= ingredient.name %></li> 
@@ -40,7 +44,7 @@
       </div> 
 
       <div class="recipe-btn">
-       <%= link_to 'edit ingredients', recipe_ingredients_path(@recipe), class:"btn btn-primary btn-sm" %>
+       <%= link_to 'Edit Ingredients', recipe_ingredients_path(@recipe), class:"btn btn-primary btn-sm" %>
       </div>
    </div>  
   
@@ -49,7 +53,7 @@
   
 <div class="row justify-content-center"> 
   <div class="recipe-btn ">
-  <%= link_to 'Edit recipe', edit_author_recipe_path(@author, @recipe), class:"btn btn-outline-primary btn-sm" %> 
+  <%= link_to 'Edit Recipe', edit_author_recipe_path(@author, @recipe), class:"btn btn-outline-primary btn-sm" %> 
   </div>  
   <div class="recipe-btn">
   <%= link_to 'Back', authors_path, class:"btn btn-outline-primary btn-sm"%>

@@ -48,6 +48,7 @@
  
 .field{
         color:white;
+        margin: 5px;
 }
 
  .buttons{
@@ -58,7 +59,7 @@
  }
  
  .recipe-scroll {
-         height: 136px;      
+         height: 198px;      
  }
 
  .list-group-item{
@@ -109,6 +110,7 @@
         border: 3px solid;  
         background-color: rgba(254, 254, 255, 0.973);
         text-align: center;
+        
 }
 
 .recipes-list{   
@@ -122,6 +124,9 @@
         color: rgb(225, 225, 225);
 }
 
+.recipe-text p{
+        font-size: 16px;
+}
 
 .recipe-btn{
         margin:5px;
@@ -132,6 +137,7 @@
         background-color: rgba(254, 254, 255, 0.973);
         border: 10px solid #4f627e;
         padding:20px;
+        margin-top: 50px;
 }
 
 .recipe-show h1{
@@ -141,7 +147,7 @@
 
 tbody{
         background-color:white;
-        padding:5px;
+        padding:15px;
         font-size: 16px;
 }
 
@@ -149,7 +155,12 @@ td{
         padding:20px;
 }
 
-ing-form{
+.ing-form{
         
-        color:black;  
+        color:wheat;  
+}
+
+.ing-table{
+        background-color:  #4f627e;
+        padding:10px;
 }
