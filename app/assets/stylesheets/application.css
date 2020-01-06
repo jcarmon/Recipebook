@@ -73,13 +73,16 @@
 
 }
 .author-card{
+        
         padding:10px;
         line-height: 1.25;
         text-align: center;
-        border: 1px solid;
         background-color: rgba(254, 254, 255, 0.973);
 
 
+}
+.author-card h1{
+   color: rgb(0, 0, 0);
 }
 
 #author{
@@ -98,17 +101,27 @@
  
 } 
 
-.recipe-card {
-        text-decoration: none;
+
+
+.recipe-cards {
+        margin: 20px 10px;
+        padding: 20px 10px;
+        border: 3px solid;  
+        background-color: rgba(254, 254, 255, 0.973);
         text-align: center;
-        margin : auto;
-        align-content: center;
 }
 
 .recipes-list{   
         margin-top: 20px;
-        border: 3px solid;   
+        border: 3px solid;  
+        background-color: rgba(254, 254, 255, 0.973); 
 }
+
+.recipe-list h2{
+        margin-top: 20px;
+        color: rgb(225, 225, 225);
+}
+
 
 .recipe-btn{
         margin:5px;
@@ -117,9 +130,13 @@
 
 .recipe-show{
         background-color: rgba(254, 254, 255, 0.973);
-        color:black;
         border: 10px solid #4f627e;
         padding:20px;
+}
+
+.recipe-show h1{
+        color:black;
+        
 }
 
 tbody{
@@ -130,4 +147,9 @@ tbody{
 
 td{
         padding:20px;
+}
+
+ing-form{
+        
+        color:black;  
 }

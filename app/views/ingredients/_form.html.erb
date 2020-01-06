@@ -1,4 +1,6 @@
 <%= form_with(model:[@recipe, ingredient]) do |form| %>
+<div class="row">
+  <div class="col-md-4 ing-form">  
   <% if ingredient.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(ingredient.errors.count, "error") %> prohibited this ingredient from being saved:</h2>
@@ -11,20 +13,21 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div>
     <%= form.label :name %>
     <%= form.text_field :name %>
   </div>
 
-  <div class="field">
+  <div>
     <%= form.label :amount %>
     <%= form.text_field :amount %>
   </div>
 
-  <div class="field">
+  <div>
     <%= form.label :unit %>
     <%= select(:ingredient, :units, [['g'], ['ml'],['pcs']]) %>
   </div>
+  <br>
 
   <div class="actions">
     <%= form.submit%>
@@ -33,4 +36,6 @@
   <div class="edit-ctrls">
     <%= link_to 'Back', recipe_ingredients_path, class: "btn btn-secondary" %>
   </div>
+</div>
+</div>  
 <% end %>
