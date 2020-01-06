@@ -157,7 +157,9 @@ td{
 
 .ing-form{
         
-        color:wheat;  
+        color:wheat;
+        background-color:  #4f627e;
+        padding:10px;  
 }
 
 .ing-table{
